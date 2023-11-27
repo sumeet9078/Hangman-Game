@@ -1,0 +1,265 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4c531;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    font-size: 1.6rem;
+    background-color: #ffffff;
+    width: 90vw;
+    max-width: 34em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 0 3em 3em;
+    border-radius: 0.6em;
+    box-shadow: 0 1.2em 2.4em rgba(111, 85, 0, 0.25);
+}
+
+.theme-button {
+    width: 100%;
+    position: relative;
+    padding: 1.5em 0;
+    margin-top: 2rem;
+}
+
+#toggle {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 25px;
+    width: 50px;
+    background-color: #f4c531;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#toggle:after {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    top: 5px;
+    left: 7px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+#options-container {
+    text-align: center;
+}
+
+#options-container div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 1.2em 0 2.4em 0;
+}
+
+#options-container button {
+    padding: 0.6em 1.2em;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 0.3em;
+    text-transform: capitalize;
+}
+
+#options-container button:disabled {
+    border: 2px solid #adb5bd;
+    background-color: transparent;
+    color: #808080;
+}
+
+#options-container button.active {
+    border: 2px solid #000000;
+    background-color: #f4c531;
+    color: #000000;
+}
+
+.letter-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6em;
+}
+
+#letter-container button {
+    height: 2.4em;
+    width: 2.4em;
+    border-radius: 0.3em;
+    background-color: #f4c531;
+    color: black;
+}
+
+#letter-container button:disabled {
+    opacity: 0;
+}
+
+.new-game-popup {
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0.6em;
+}
+
+#user-input-section {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8em;
+    margin: 0.6em 0 1.2em 0;
+}
+
+canvas {
+    display: block;
+    margin: auto;
+    border: 1px solid #000000;
+}
+
+.hide {
+    display: none;
+}
+
+#result-text h2 {
+    font-size: 1.8em;
+    text-align: center;
+}
+
+#result-text p {
+    font-size: 1.25em;
+    margin: 1em 0 2em 0;
+}
+
+#result-text span {
+    font-weight: 600;
+}
+
+#new-game-button {
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+    background-color: #f4c531;
+    border: 3px solid #000000;
+    color: #000000;
+    border-radius: 0.2em;
+}
+
+.win-msg {
+    color: #39d78d;
+}
+
+.lose-msg {
+    color: #fe5152;
+}
+
+/* **************** */
+/* DARK THEME START */
+/* **************** */
+
+.dark-theme {
+    background-color: #495057;
+    color: #e5e5e5;
+}
+
+.dark-theme .container {
+    background-color: #212529;
+    box-shadow: 0 1.2em 2.4em rgba(33, 37, 41, 0.5);
+}
+
+.dark-theme #toggle {
+    background-color: #868e96;
+}
+
+.dark-theme #toggle:after {
+    background-color: transparent;
+    box-shadow: 11px 10px #fff;
+    top: -4px;
+    left: 18px;
+}
+
+.dark-theme #options-container button {
+    background-color: #495057;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.dark-theme #options-container button.active {
+    background-color: #adb5bd;
+    border-color: #868e96;
+    color: #000000;
+}
+
+.dark-theme #letter-container button {
+    background-color: #adb5bd;
+    border-color: #868e96;
+    color: #000000;
+}
+
+.dark-theme canvas {
+    border-color: #ffffff;
+    background-color: #868e96;
+}
+
+.dark-theme .new-game-popup {
+    background-color: #212529;
+}
+
+.dark-theme #new-game-button {
+    background-color: #adb5bd;
+    border-color: #868e96;
+    color: #000000;
+}
+
+@media (max-width: 800px) {
+    canvas {
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    canvas {
+        width: 90%;
+    }
+
+    #options-container div {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #options-container button {
+        width: 8em;
+        margin-top: 1em;
+    }
+
+    #options-container button:disabled {
+        display: none;
+    }
+
+    #options-container button.active {
+        display: block;
+    }
+}
